@@ -1,4 +1,4 @@
-"""Exploratory analysis for the official IBM Telco churn dataset.
+""""Exploratory analysis for the official IBM Telco churn dataset.
 
 Run from the repository root with: python notebooks/eda.py
 Charts are written to static/images/eda/. No synthetic observations are used.
@@ -37,19 +37,19 @@ def run_eda(dataset_path: str | Path = DEFAULT_DATASET_PATH) -> None:
         raise ValueError("EDA stopped because dataset validation failed. Fix the dataset issues above.")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    sns.set_theme(style="whitegrid", palette=" purples")
-    print("\nDataset overview\n", df.describe(include="all").transpose().to_string())
-    print("\nDemographics (counts)\n", df[["gender", "SeniorCitizen", "Partner", "Dependents"]].describe().to_string())
-    print("\nChurn distribution\n", df["Churn"].value_counts().to_string())
+    sns.set_theme(style="whitegrid", palette="Purples")
+    print("\\nDataset overview\\n", df.describe(include="all").transpose().to_string())
+    print("\\nDemographics (counts)\\n", df[["gender", "SeniorCitizen", "Partner", "Dependents"]].describe().to_string())
+    print("\\nChurn distribution\\n", df["Churn"].value_counts().to_string())
     for column in ["gender", "SeniorCitizen", "Contract", "InternetService", "PaymentMethod"]:
-        print(f"\n{column} vs churn (within-group churn rate)\n",
+        print(f"\\n{column} vs churn (within-group churn rate)\\n",
               (pd.crosstab(df[column], df["Churn"], normalize="index") * 100).round(1).to_string())
-    print("\nTenure by churn\n", df.groupby("Churn", observed=False)["tenure"].describe().round(2).to_string())
+    print("\\nTenure by churn\\n", df.groupby("Churn", observed=False)["tenure"].describe().round(2).to_string())
     for column in ["MonthlyCharges", "TotalCharges"]:
-        print(f"\n{column} by churn\n", df.groupby("Churn", observed=False)[column].describe().round(2).to_string())
+        print(f"\\n{column} by churn\\n", df.groupby("Churn", observed=False)[column].describe().round(2).to_string())
     service_columns = ["PhoneService", "MultipleLines", "OnlineSecurity", "OnlineBackup",
                        "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies"]
-    print("\nService adoption and churn rates (percent)\n",
+    print("\\nService adoption and churn rates (percent)\\n",
           (df.groupby("Churn", observed=False)[service_columns].apply(
               lambda group: group.eq("Yes").mean() * 100)).round(1).to_string())
 
@@ -92,7 +92,7 @@ def run_eda(dataset_path: str | Path = DEFAULT_DATASET_PATH) -> None:
                 square=True, cbar_kws={"label": "Pearson correlation"}, ax=ax)
     ax.set(title="Correlation Heatmap: Numerical Features", xlabel="Numerical feature", ylabel="Numerical feature")
     _save(fig, "correlation_heatmap.png")
-    print(f"\nSaved six charts to {OUTPUT_DIR}")
+    print(f"\\nSaved six charts to {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":
