@@ -6,3 +6,4 @@ venv/
 *.db
 instance/
 .DS_Store
+model/artifacts/
