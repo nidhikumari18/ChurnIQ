@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ff">
+  <meta name="description" content="ChurnIQ helps teams understand customer churn using transparent, locally run machine learning.">
+  <title>ChurnIQ — Customer retention, made clearer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="{{ url_for('home') }}" aria-label="ChurnIQ home">ChurnIQ<span class="wordmark-period">.</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#built-for-trust">Built for trust</a>
+    </nav>
+    <a class="header-link" href="#get-started">Explore the project <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero page-width">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> CUSTOMER INTELLIGENCE, MADE PRACTICAL</p>
+        <h1>See churn sooner.<br><span>Keep customers longer.</span></h1>
+        <p class="hero-description">A clear, data-led workspace for understanding customer churn. Built around real telco data, transparent machine learning, and recommendations your team can act on.</p>
+        <div class="hero-actions" id="get-started">
+          <a class="button button-primary" href="#how-it-works">Discover ChurnIQ <span aria-hidden="true">→</span></a>
+          <span class="local-note"><span class="local-check" aria-hidden="true">✓</span> Local-first. No paid services required.</span>
+        </div>
+        <div class="trust-row" id="built-for-trust">
+          <span><i class="trust-icon" aria-hidden="true">✓</i> IBM Telco dataset</span>
+          <span><i class="trust-icon" aria-hidden="true">✓</i> Explainable ML</span>
+          <span><i class="trust-icon" aria-hidden="true">✓</i> Optional AI</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of customer retention insights">
+        <div class="art-glow"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="insight-card">
+          <div class="card-topline"><span class="card-label">RETENTION OVERVIEW</span><span class="card-menu" aria-hidden="true">···</span></div>
+          <div class="card-empty">
+            <div class="empty-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+            <strong>Your insights start with real data</strong>
+            <p>Add the IBM Telco dataset to build your first verified analysis.</p>
+          </div>
+          <div class="card-footer"><span class="status-dot"></span> Waiting for dataset setup</div>
+        </div>
+        <div class="floating-tag tag-left"><span class="tag-mark" aria-hidden="true">↗</span><span><b>Understand</b><small>risk signals</small></span></div>
+        <div class="floating-tag tag-right"><span class="tag-mark tag-mark-light" aria-hidden="true">◎</span><span><b>Act with</b><small>confidence</small></span></div>
+        <span class="art-spark art-spark-a" aria-hidden="true"></span>
+        <span class="art-spark art-spark-b" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section class="value-strip page-width" aria-label="Project principles">
+      <div class="value-item"><span class="value-number">01</span><span><b>Real customer data</b><small>Grounded in the IBM Telco dataset</small></span></div>
+      <div class="value-item"><span class="value-number">02</span><span><b>Models you can compare</b><small>Metrics from actual model evaluation</small></span></div>
+      <div class="value-item"><span class="value-number">03</span><span><b>Works on your machine</b><small>Free, local-first technology</small></span></div>
+    </section>
+
+    <section class="how-section page-width" id="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">A THOUGHTFUL WORKFLOW</p>
+        <h2>From customer data to<br><span>clear next steps.</span></h2>
+        <p>ChurnIQ is being built in focused stages, so each insight is traceable to real data and tested code.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-index">01</span><div class="step-symbol symbol-data" aria-hidden="true"><span></span><span></span><span></span></div><h3>Bring in the data</h3><p>Start with the IBM Telco Customer Churn dataset. No synthetic customer records or sample results.</p></article>
+        <article class="step-card"><span class="step-index">02</span><div class="step-symbol symbol-model" aria-hidden="true"><span></span><span></span><span></span></div><h3>Evaluate real models</h3><p>Train and compare classic scikit-learn models using measured evaluation metrics.</p></article>
+        <article class="step-card"><span class="step-index">03</span><div class="step-symbol symbol-action" aria-hidden="true"><span></span><span></span></div><h3>Choose a next step</h3><p>Review evidence-based explanations and practical retention ideas, with optional AI assistance.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a class="wordmark" href="{{ url_for('home') }}">ChurnIQ<span class="wordmark-period">.</span></a><p>Customer retention, made clearer. Built to run locally.</p><span>Phase 1 · Project foundation</span></footer>
+</body>
+</html>
