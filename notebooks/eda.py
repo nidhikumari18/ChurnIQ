@@ -1,4 +1,4 @@
-""""Exploratory analysis for the official IBM Telco churn dataset.
+"""Exploratory analysis for the official IBM Telco churn dataset.
 
 Run from the repository root with: python notebooks/eda.py
 Charts are written to static/images/eda/. No synthetic observations are used.
